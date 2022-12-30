@@ -13,8 +13,9 @@ int main()
     const int CodeSum = CodeA + CodeB + CodeC;
     const int CodeProduct = CodeA * CodeB * CodeC;
 
-    cout << CodeSum << endl;
-    cout << CodeProduct;
+    cout << "There are 3 number in the code \n";
+    cout << "The codes add-up to: " << CodeSum << endl;
+    cout << "The codes multiply to give: " << CodeProduct << endl;
 
     return 0;
 }
