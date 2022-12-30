@@ -17,5 +17,14 @@ int main()
     cout << "The codes add-up to: " << CodeSum << endl;
     cout << "The codes multiply to give: " << CodeProduct << endl;
 
+    int GuessA, GuessB, GuessC;
+    cin >> GuessA;
+    cin >> GuessB;
+    cin >> GuessC;
+    cout << "You Enterd: " << GuessA << " " << GuessB << " " << GuessC; 
+
+    int GuessSum = GuessA + GuessB + GuessC;
+    int GuessProduct = GuessA * GuessB * GuessC;
+
     return 0;
 }
