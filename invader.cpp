@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
-
-void PrintIntroduction()
-{ 
+void PrintBanner()
+{
     cout << " _                _             \n";
     cout << "| |              | |            \n";
     cout << "| |__   __ _  ___| | _____ _ __ \n";
@@ -10,13 +9,17 @@ void PrintIntroduction()
     cout << "| | | | (_| | (__|   <  __/ |   \n";
     cout << "|_| |_|\\__,_|\\___|_|\\_\\___|_|   \n"; 
     cout << endl;     
-    cout << "You are a secret agent breaking into a secure server room \n";
-    cout << "You need to enter the correct codes to continue...\n";                         
 }
 
-bool PlayGame()
+void PrintIntroduction(int Difficulty)
+{ 
+    cout << "You are a secret agent breaking into a level "<< Difficulty;
+    cout << " secure server room \nYou need to enter the correct codes to continue...\n";                         
+}
+
+bool PlayGame(int Difficulty)
 {
-    PrintIntroduction();
+    PrintIntroduction(Difficulty);
     
     const int CodeA = 4;
     const int CodeB = 3;
@@ -49,12 +52,19 @@ bool PlayGame()
 
 int main()
 {
+    PrintBanner();
+    int LevelDifficulty = 1;
     while(true)
     {
-        bool bLevelComplete = PlayGame();
+        bool bLevelComplete = PlayGame(LevelDifficulty);
         cin.clear(); // Clears any errors
         cin.ignore();  // Discard the buffer  
+        if (bLevelComplete)
+        {
+            ++LevelDifficulty;
+        }
     }
+
 
     return 0;
 }
