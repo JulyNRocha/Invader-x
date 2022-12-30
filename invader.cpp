@@ -1,5 +1,7 @@
 #include <iostream>
+#include <ctime>
 using namespace std;
+
 void PrintBanner()
 {
     cout << " _                _             \n";
@@ -21,9 +23,9 @@ bool PlayGame(int Difficulty)
 {
     PrintIntroduction(Difficulty);
     
-    const int CodeA = 4;
-    const int CodeB = 3;
-    const int CodeC = 2;
+    const int CodeA = rand() % Difficulty + Difficulty;
+    const int CodeB = rand() % Difficulty + Difficulty;
+    const int CodeC = rand() % Difficulty + Difficulty;
 
     const int CodeSum = CodeA + CodeB + CodeC;
     const int CodeProduct = CodeA * CodeB * CodeC;
@@ -34,27 +36,32 @@ bool PlayGame(int Difficulty)
 
     int GuessA, GuessB, GuessC;
     cin >> GuessA >> GuessB >> GuessC;
+    cout << endl;
 
     int GuessSum = GuessA + GuessB + GuessC;
     int GuessProduct = GuessA * GuessB * GuessC;
 
     if((GuessSum == CodeSum) && (GuessProduct == CodeProduct))
     {
-        cout << "You Win!\n\n";
+        cout << "*** Great work agent! You have downloaded the files! Keep going! *** \n\n";
         return true;
     }
     else
     {
-        cout << "You Lose!\n\n";
+        cout << "*** You enteder the wrong code! You need to be more careful agent! Try again ***\n\n";
         return false;
     }
 }
 
 int main()
 {
+    srand(time(NULL));
+    
     PrintBanner();
     int LevelDifficulty = 1;
-    while(true)
+    int const MaxDifficulty = 7;
+
+    while(LevelDifficulty <= MaxDifficulty)
     {
         bool bLevelComplete = PlayGame(LevelDifficulty);
         cin.clear(); // Clears any errors
@@ -65,6 +72,7 @@ int main()
         }
     }
 
+    cout << "\n *** Nice Job agent! You got all the files! Now get out of there! ***\n";
 
     return 0;
 }
