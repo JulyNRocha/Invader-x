@@ -21,10 +21,19 @@ int main()
     cin >> GuessA;
     cin >> GuessB;
     cin >> GuessC;
-    cout << "You Enterd: " << GuessA << " " << GuessB << " " << GuessC; 
+    cout << "You Enterd: " << GuessA << " " << GuessB << " " << GuessC << endl; 
 
     int GuessSum = GuessA + GuessB + GuessC;
     int GuessProduct = GuessA * GuessB * GuessC;
 
+    if((GuessSum == CodeSum) && (GuessProduct == CodeProduct))
+    {
+        cout << "You Win!";
+    }
+    else
+    {
+        cout << "You Lose!";
+    }
+    
     return 0;
 }
