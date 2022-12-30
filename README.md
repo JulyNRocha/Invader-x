@@ -2,8 +2,6 @@
 
 ![CPP](https://img.shields.io/badge/Made%20with-C%2B%2B-57b9d3?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
-###### tags: `Games` `GitHub` `Unreal`
-
 ## Game Description
 You are a hacker attempting to enter a server, test your mathematical skills in this command-line game!
 
