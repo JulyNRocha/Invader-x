@@ -14,7 +14,7 @@ void PrintIntroduction()
     cout << "You need to enter the correct codes to continue...\n";                         
 }
 
-void PlayGame()
+bool PlayGame()
 {
     PrintIntroduction();
     
@@ -37,16 +37,24 @@ void PlayGame()
 
     if((GuessSum == CodeSum) && (GuessProduct == CodeProduct))
     {
-        cout << "You Win!";
+        cout << "You Win!\n\n";
+        return true;
     }
     else
     {
-        cout << "You Lose!";
+        cout << "You Lose!\n\n";
+        return false;
     }
 }
 
 int main()
 {
-    PlayGame();    
+    while(true)
+    {
+        bool bLevelComplete = PlayGame();
+        cin.clear(); // Clears any errors
+        cin.ignore();  // Discard the buffer  
+    }
+
     return 0;
 }
